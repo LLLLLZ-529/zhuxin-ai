@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin:0; color:#17211d; background:#eef2ef; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid #f4a340; outline-offset:2px; }
+.safe-bottom { padding-bottom: calc(5.75rem + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) { .safe-bottom { padding-bottom: 0; } }
+@media (min-width: 768px) {
+  main > div > div[class*="px-5"][class*="py-"] { width: 100%; max-width: 1180px; margin-inline: auto; padding-left: 2rem; padding-right: 2rem; }
+}
+@media (min-width: 1024px) {
+  main > div > div[class*="px-5"] > .grid.grid-cols-2 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 768px) {
+  .fixed.inset-0[class*="items-end"] { align-items: center; padding: 2rem; }
+  .fixed.inset-0 > div[class*="max-w-"] { max-width: 680px; border-radius: 2rem; }
+}
+.dot-grid { background-image: radial-gradient(rgba(22,124,90,.1) 1px,transparent 1px); background-size:18px 18px; }
+@keyframes breathe { 0%,100%{transform:scale(.72)} 40%{transform:scale(1)} 60%{transform:scale(1)} }
+.breathe { animation:breathe 10s ease-in-out infinite; }
+@keyframes drop { 0%{transform:translateY(-10px) rotate(-3deg);opacity:0} 70%{opacity:1} 100%{transform:translateY(65px) rotate(5deg);opacity:0} }
+.paper-drop { animation:drop 1.2s ease-in forwards; }
