@@ -6,7 +6,7 @@ export async function GET() {
 // 聊天请求（POST），转发到腾讯云SCF
 export async function POST(req: Request) {
   const { agent, message, messages } = await req.json()
-  const SCF_URL = "https://1376899516-0t589lho57.ap-guangzhou.tencentscf.com/"
+  const SCF_URL = "https://xxxxxxxxxx.ap-guangzhou.tencentscf.com/"
   try {
     const res = await fetch(SCF_URL, {
       method: 'POST',
